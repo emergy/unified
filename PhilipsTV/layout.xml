@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <row>
+        <button icon="vmute" id="mute" onTap="volume_mute" />
+        <button icon="vdown" onTap="volume_down" />
+        <button icon="vup" onTap="volume_up" />
+        <button icon="power" onTap="screenoff" />
+    </row>
+    <row weight="wrap">
+        <slider id="vol" text="Volume" progressmax="60" onchange="volume_change"/>
+    </row>
+	<row>
+		<button icon="back" onTap="back" />
+        <button icon="up" onTap="up" />
+        <button text="Ambilight" onTap="light" />
+	</row>
+	<row>
+        <button icon="left" onTap="left" />
+        <button icon="select" onTap="enter" />
+        <button icon="right" onTap="right" />
+	</row>
+	<row>
+		<button icon="list" ontap="options" />
+        <button icon="down" onTap="down" />
+        <button icon="fullscreen" onTap="format" />
+	</row>
+</layout>
