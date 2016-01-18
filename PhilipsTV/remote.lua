@@ -12,28 +12,8 @@ local url = "http://192.168.1.18:1925";
 -- http library
 -- https://github.com/unifiedremote/Docs/blob/master/libs/http.md
 
-update_volume();
-
-function update_volume()
-    http.get(url .. "/1/audio/volume", function (err, resp)
-        if (err) then return; end
-        print(resp);
-        local volume_data = data.fromjson(resp);
-        layout.vol.progress = volume_data.current;
-        layout.vol.progressmax = volume_data.max;
-        if (volume_data.muted) then
-            layout.mute.color = "red";
-        else
-            layout.mute.color = "";
-        end
-    end);
-end
-
-function send_key(key)
-    http.post(url .. "/1/input/key", '{"key":"' .. key .. '"}', function (err, resp)
-        if (err) then return; end
-        print(resp);
-    end);
+events.focus = function()
+    vol_update();
 end
 
 actions.volume_change = function (progress)
@@ -41,21 +21,22 @@ actions.volume_change = function (progress)
         if (err) then return; end
         print(resp);
     end);
+    vol_update();
 end
 
 actions.volume_mute = function ()
     send_key("Mute");
-    update_volume();
+    vol_update();
 end
 
 actions.volume_down = function ()
     send_key("VolumeDown");
-    update_volume();
+    vol_update();
 end
 
 actions.volume_up = function ()
     send_key("VolumeUp");
-    update_volume();
+    vol_update();
 end
 
 actions.screenoff = function ()
@@ -106,3 +87,24 @@ actions.format = function ()
     send_key("Viewmode");
 end
 
+function vol_update()
+    http.get(url .. "/1/audio/volume", function (err, resp)
+        if (err) then return; end
+        print(resp);
+        local volume_data = data.fromjson(resp);
+        layout.vol.progress = volume_data.current;
+        layout.vol.progressmax = volume_data.max;
+        if (volume_data.muted == true) then
+            layout.mute.color = "red";
+        else
+            layout.mute.color = "";
+        end
+    end);
+end
+
+function send_key(key)
+    http.post(url .. "/1/input/key", '{"key":"' .. key .. '"}', function (err, resp)
+        if (err) then return; end
+        print(resp);
+    end);
+end
