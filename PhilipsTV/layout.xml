@@ -1,27 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
-    <row>
-        <button icon="vmute" id="mute" onTap="volume_mute" />
-        <button icon="vdown" onTap="volume_down" />
-        <button icon="vup" onTap="volume_up" />
-        <button icon="power" onTap="screenoff" />
-    </row>
-    <row weight="wrap">
-        <slider id="vol" text="Volume" progressmax="60" onchange="volume_change"/>
-    </row>
-	<row>
-		<button icon="back" onTap="back" />
-        <button icon="up" onTap="up" />
-        <button text="Ambilight" onTap="light" />
-	</row>
-	<row>
-        <button icon="left" onTap="left" />
-        <button icon="select" onTap="enter" />
-        <button icon="right" onTap="right" />
-	</row>
-	<row>
-		<button icon="list" ontap="options" />
-        <button icon="down" onTap="down" />
-        <button icon="fullscreen" onTap="format" />
-	</row>
+    <tabs>
+        <tab text="Main">
+            <row>
+                <button icon="vmute" id="mute" onTap="volume_mute" />
+                <button icon="vdown" onTap="volume_down" />
+                <button icon="vup" onTap="volume_up" />
+                <button icon="power" onTap="screenoff" />
+            </row>
+            <row weight="wrap">
+                <slider id="vol" text="Volume" progressmax="60" onchange="volume_change"/>
+            </row>
+            <row>
+                <button icon="back" onTap="back" />
+                <button icon="up" onTap="up" />
+                <button text="Ambilight" onTap="light" />
+            </row>
+            <row>
+                <button icon="left" onTap="left" />
+                <button icon="select" onTap="enter" />
+                <button icon="right" onTap="right" />
+            </row>
+            <row>
+                <button icon="list" ontap="options" />
+                <button icon="down" onTap="down" />
+                <button icon="fullscreen" onTap="format" />
+            </row>
+        </tab>
+        <tab text="Channels">
+            <row>
+                <button text="1" scale="fit" onTap="channel_1" />
+                <button text="2" scale="fit" onTap="channel_2" />
+                <button text="3" scale="fit" onTap="channel_3" />
+            </row>
+            <row>
+                <button text="4" scale="fit" onTap="channel_4" />
+                <button text="5" scale="fit" onTap="channel_5" />
+                <button text="6" scale="fit" onTap="channel_6" />
+            </row>
+            <row>
+                <button text="7" scale="fit" onTap="channel_7" />
+                <button text="8" scale="fit" onTap="channel_8" />
+                <button text="9" scale="fit" onTap="channel_9" />
+            </row>
+            <row>
+                <button icon="arrowdown" onTap="channel_down" />
+                <button icon="arrowup" onTap="channel_up" />
+                <button text="0" scale="fit" onTap="channel_0" />
+            </row>
+        </tab>
+    </tabs>
 </layout>

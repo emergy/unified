@@ -89,6 +89,54 @@ actions.format = function ()
     send_key("Viewmode");
 end
 
+actions.channel_1 = function ()
+    send_key("Digit1");
+end
+
+actions.channel_2 = function ()
+    send_key("Digit2");
+end
+
+actions.channel_3 = function ()
+    send_key("Digit3");
+end
+
+actions.channel_4 = function ()
+    send_key("Digit4");
+end
+
+actions.channel_5 = function ()
+    send_key("Digit5");
+end
+
+actions.channel_6 = function ()
+    send_key("Digit6");
+end
+
+actions.channel_7 = function ()
+    send_key("Digit7");
+end
+
+actions.channel_8 = function ()
+    send_key("Digit8");
+end
+
+actions.channel_9 = function ()
+    send_key("Digit9");
+end
+
+actions.channel_0 = function ()
+    send_key("Digit0");
+end
+
+actions.channel_down = function ()
+    send_key("ChannelStepDown");
+end
+
+actions.channel_up = function ()
+    send_key("ChannelStepUp");
+end
+
 function vol_update()
     http.get(url .. "/1/audio/volume", function (err, resp)
         if (err) then return; end
