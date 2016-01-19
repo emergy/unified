@@ -25,20 +25,14 @@ end
 
 actions.volume_mute = function ()
     send_key("Mute");
-    --os.sleep(100);
-    --vol_update();
 end
 
-actions.volume_down = function ()
-    send_key("VolumeDown");
-    --os.sleep(100);
-    --vol_update();
+actions.home = function ()
+    send_key("Home");
 end
 
-actions.volume_up = function ()
-    send_key("VolumeUp");
-    --os.sleep(100);
-    --vol_update();
+actions.green = function ()
+    send_key("GreenColour");
 end
 
 actions.screenoff = function ()
