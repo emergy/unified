@@ -21,22 +21,24 @@ actions.volume_change = function (progress)
         if (err) then return; end
         print(resp);
     end);
-    vol_update();
 end
 
 actions.volume_mute = function ()
     send_key("Mute");
-    vol_update();
+    --os.sleep(100);
+    --vol_update();
 end
 
 actions.volume_down = function ()
     send_key("VolumeDown");
-    vol_update();
+    --os.sleep(100);
+    --vol_update();
 end
 
 actions.volume_up = function ()
     send_key("VolumeUp");
-    vol_update();
+    --os.sleep(100);
+    --vol_update();
 end
 
 actions.screenoff = function ()
@@ -90,15 +92,15 @@ end
 function vol_update()
     http.get(url .. "/1/audio/volume", function (err, resp)
         if (err) then return; end
-        print(resp);
         local volume_data = data.fromjson(resp);
         layout.vol.progress = volume_data.current;
         layout.vol.progressmax = volume_data.max;
-        if (volume_data.muted == true) then
-            layout.mute.color = "red";
-        else
-            layout.mute.color = "";
-        end
+        print(resp);
+        --if (volume_data.muted == true) then
+        --    layout.mute.color = "#DF3A01";
+        --else
+        --    layout.mute.color = nil;
+        --end
     end);
 end
 
