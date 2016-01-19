@@ -14,6 +14,15 @@ local url = "http://192.168.1.18:1925";
 
 events.focus = function()
     vol_update();
+    http.get(url .. "/1/system", function (err, resp)
+        if (err) then return; end
+        local info_dict = data.fromjson(resp);
+        local info = "";
+        for key,value in pairs(info_dict) do
+            info = info .. key .. ": " .. value .. "\n";
+        end
+        layout.info.text = info;
+    end);
 end
 
 actions.volume_change = function (progress)

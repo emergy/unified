@@ -49,5 +49,8 @@
                 <button text="0" scale="fit" onTap="channel_0" />
             </row>
         </tab>
+        <tab text="info">
+            <label id="info" />
+        </tab>
     </tabs>
 </layout>
