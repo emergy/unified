@@ -19,7 +19,7 @@ end
 actions.volume_change = function (progress)
     http.post(url .. "/1/audio/volume", '{"muted":false,"current":' .. progress .. '"}', function (err, resp)
         if (err) then return; end
-        print(resp);
+        --print(resp);
     end);
 end
 
@@ -137,18 +137,13 @@ function vol_update()
         local volume_data = data.fromjson(resp);
         layout.vol.progress = volume_data.current;
         layout.vol.progressmax = volume_data.max;
-        print(resp);
-        --if (volume_data.muted == true) then
-        --    layout.mute.color = "#DF3A01";
-        --else
-        --    layout.mute.color = nil;
-        --end
+        --print(resp);
     end);
 end
 
 function send_key(key)
     http.post(url .. "/1/input/key", '{"key":"' .. key .. '"}', function (err, resp)
         if (err) then return; end
-        print(resp);
+        --print(resp);
     end);
 end
