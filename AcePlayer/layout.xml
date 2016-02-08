@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onlaunch="launch" lightcolor="#e77300" darkcolor="#c46e19">
+	<tabs>
+		<tab text="PlayPad">
+            <row>
+                <button text="Format" ontap="format" />
+                <button text="Subtitles" ontap="subtitles" />
+                <button text="quit" ontap="quit" />
+			</row>
+            <row>
+                <button text="Audio track" ontap="audio_track" />
+                <button text="Audio delay -" ontap="audio_delay_down" />
+                <button text="Audio delay +" ontap="audio_delay_up" />
+            </row>
+			<row>
+				<button icon="rwd" ontap="jump_back" />
+				<button icon="stop" ontap="stop" />
+				<button icon="ff" ontap="jump_forward" />
+			</row>
+			<row weight="wrap">
+				<slider id="pos" text="Position" onchange="position_change" onup="position_stop" />
+			</row>
+			<row weight="wrap">
+				<slider id="vol" text="Volume" onchange="volume_change"/>
+			</row>
+			<row weight="wrap">
+				<button icon="previous" ontap="previous" />
+				<button id="play" icon="playpause" ontap="play_pause" />
+				<button icon="next" ontap="next" />
+			</row>
+		</tab>
+		<tab text="ArrowPad">
+            <row>
+                <button icon="list" ontap="playlist" />
+                <button icon="up" ontap="arrow_up" />
+				<button icon="fullscreen" ontap="fullscreen" />
+            </row>
+            <row>
+                <button icon="left" ontap="arrow_left" />
+                <button icon="select" ontap="select" />
+                <button icon="right" ontap="arrow_right" />
+            </row>
+			<row>
+				<button icon="vdown" ontap="volume_down" />
+				<button icon="down" ontap="arrow_down" />
+				<button icon="vup" ontap="volume_up" />
+			</row>
+		</tab>
+		<tab text="Library">
+			<row>
+				<list id="list" ontap="library_select">
+					<item text="Loading..." />
+				</list>
+			</row>
+			<row weight="wrap">
+				<button icon="back" ontap="library_back" />
+				<button icon="refresh" ontap="library_refresh" />
+			</row>
+		</tab>
+	</tabs>
+</layout>
