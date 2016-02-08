@@ -1,7 +1,8 @@
 local http = libs.http;
 local data = require("data");
 
-local url = "http://192.168.1.18:1925";
+local host = settings.host;
+local url = "http://" .. host .. ":1925";
 
 -- Documentation
 -- https://github.com/unifiedremote/Docs
