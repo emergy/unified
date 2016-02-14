@@ -453,3 +453,11 @@ end
 actions.fullscreen = function ()
 	send("fullscreen");
 end
+
+actions.switch = function()
+    if OS_WINDOWS then
+        local hwnd = win.window("ace_player.exe");
+        if (hwnd != 0) then win.switchtowait("ace_player.exe"); end
+    end
+end
+
