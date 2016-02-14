@@ -451,13 +451,14 @@ end
 
 --@help Toggle fullscreen
 actions.fullscreen = function ()
-	send("fullscreen");
+	--send("fullscreen");
+    kb.press("F11");
 end
 
 actions.switch = function()
     if OS_WINDOWS then
         local hwnd = win.window("ace_player.exe");
-        if (hwnd != 0) then win.switchtowait("ace_player.exe"); end
+        if (hwnd ~= 0) then win.switchtowait("ace_player.exe"); end
     end
 end
 
