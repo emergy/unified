@@ -150,6 +150,8 @@ actions.open_from_tasker = function(url)
     keyboard.text(url);
     os.sleep(50);
     keyboard.press("return");
+    os.sleep(500);
+    keyboard.stroke("menu", "right");
 end
 
 actions.change = function(text)
