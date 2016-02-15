@@ -140,6 +140,18 @@ actions.open_in_current_tab = function()
     keyboard.press("return");
 end
 
+--@help open URL from Tasker
+--@param url
+actions.open_from_tasker = function(url)
+    actions.switch();
+    os.sleep(500);
+    keyboard.stroke("control", "L");
+    os.sleep(100);
+    keyboard.text(url);
+    os.sleep(50);
+    keyboard.press("return");
+end
+
 actions.change = function(text)
     _text = text;
 end
