@@ -449,7 +449,11 @@ end
 
 --@help Toggle fullscreen
 actions.fullscreen = function ()
-	--send("fullscreen");
+	send("fullscreen");
+end
+
+--@help Toggle fullscreen2
+actions.fullscreen2 = function ()
     kb.press("F11");
 end
 

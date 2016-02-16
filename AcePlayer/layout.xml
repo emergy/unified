@@ -36,7 +36,7 @@
             <row>
                 <button icon="list" ontap="playlist" />
                 <button icon="up" ontap="arrow_up" />
-				<button icon="fullscreen" ontap="fullscreen" />
+				<button icon="fullscreen" ontap="fullscreen" onhold="fullscreen2" />
             </row>
             <row>
                 <button icon="left" ontap="arrow_left" />
