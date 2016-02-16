@@ -457,6 +457,11 @@ actions.fullscreen2 = function ()
     kb.press("F11");
 end
 
+--@help Show position
+actions.show_position = function ()
+    kb.press("t");
+end
+
 actions.switch = function()
     if OS_WINDOWS then
         local hwnd = win.window("ace_player.exe");
