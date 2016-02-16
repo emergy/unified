@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<layout onlaunch="launch" lightcolor="#e77300" darkcolor="#c46e19">
+<layout onlaunch="launch" lightcolor="#e77300" darkcolor="#c46e19" onVolumeUp="os_volume_up" onVolumeDown="os_volume_down">
 	<tabs>
 		<tab text="PlayPad">
             <row weight="wrap">
                 <label id="title" text="Connecting..." ontap="show_position" />
             </row>
             <row>
+                <button text="quit" ontap="quit" />
                 <button text="Format" ontap="format" />
                 <button text="Subtitles" ontap="subtitles" />
-                <button text="quit" ontap="quit" />
 			</row>
             <row>
                 <button text="Audio track" ontap="audio_track" />

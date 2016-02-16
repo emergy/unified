@@ -462,6 +462,16 @@ actions.show_position = function ()
     kb.press("t");
 end
 
+--@help Lower system volume
+actions.os_volume_down = function()
+    kb.press("volumedown");
+end
+
+--@help Raise system volume
+actions.os_volume_up = function()
+    kb.press("volumeup");
+end
+
 actions.switch = function()
     if OS_WINDOWS then
         local hwnd = win.window("ace_player.exe");

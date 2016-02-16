@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout onVolumeUp="os_volume_up" onVolumeDown="os_volume_down">
     <tabs>
         <tab text="Main">
             <row>

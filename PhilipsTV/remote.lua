@@ -1,4 +1,5 @@
 local http = libs.http;
+local kb = require("keyboard");
 local data = require("data");
 
 local host = settings.host;
@@ -143,6 +144,16 @@ end
 
 actions.channel_up = function ()
     send_key("ChannelStepUp");
+end
+
+--@help Lower system volume
+actions.os_volume_down = function()
+    kb.press("volumedown");
+end
+
+--@help Raise system volume
+actions.os_volume_up = function()
+    kb.press("volumeup");
 end
 
 function vol_update()
