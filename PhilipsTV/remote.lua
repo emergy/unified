@@ -46,11 +46,6 @@ actions.green = function ()
 end
 
 actions.screenoff = function ()
-    http.post(url .. "/1/audio/volume", '{"muted":true}', function (err, resp)
-        if (err) then return; end
-        --print(resp);
-    end);
-    os.sleep(500);
     send_key("GreenColour");
     os.sleep(2500);
     for i = 1, 4 do
@@ -60,6 +55,10 @@ actions.screenoff = function ()
     send_key("CursorDown");
     os.sleep(500);
     send_key("Confirm");
+    os.sleep(500);
+    http.post(url .. "/1/audio/volume", '{"muted":true}', function (err, resp)
+        if (err) then return; end
+    end);
 end
 
 actions.back = function ()
