@@ -1,6 +1,7 @@
 local keyboard = libs.keyboard;
 local win = libs.win;
 local device = libs.device;
+local win = libs.win;
 local script = require("script");
 local utf8 = require("utf8");
 
@@ -148,8 +149,14 @@ actions.open_from_tasker = function(url)
     keyboard.stroke("control", "L");
     os.sleep(100);
     keyboard.text(url);
-    os.sleep(50);
+    os.sleep(100);
     keyboard.press("return");
+    for i = 1, 20 do
+        hwnd = win.active();
+        title = win.title(hwnd);
+        os.sleep(500);
+        if (title == "Change open as...") then break; end
+    end
     os.sleep(500);
     keyboard.stroke("menu", "right");
 end
