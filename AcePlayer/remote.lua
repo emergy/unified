@@ -112,7 +112,6 @@ function update_status()
 		if (v.name == "time") then pos = tonumber(v.text); end
 		if (v.name == "length") then length = tonumber(v.text); end
 		if (v.name == "volume") then vol = tonumber(v.text); end
-		--[[
         if (v.name == "information") then
 			for k2,v2 in pairs(v.children) do
 				if (v2.attributes.name == "meta") then
@@ -124,7 +123,6 @@ function update_status()
 				end
 			end
 		end
-        --]]
 	end	
 	
 	local icon = "play";
@@ -143,6 +141,7 @@ function update_status()
 		end
 		last_title = title;
 	end
+    --]]
 	
 	if (title == "") then
 		if (file == "") then
@@ -151,14 +150,13 @@ function update_status()
 			title = file;
 		end
 	end
-    --]]
 	
 	if (seeking) then
 		pos = seeking_pos;
 	end
 	
 	libs.server.update(
-		--{ id = "title", text = title },
+		{ id = "title", text = title },
 		{ id = "info", text = info },
 		{ id = "pos", progress = pos, progressmax = length, text = libs.data.sec2span(pos) .. " / " .. libs.data.sec2span(length) },
 		{ id = "vol", progress = vol, progressmax = 320},
