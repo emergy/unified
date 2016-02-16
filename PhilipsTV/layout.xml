@@ -13,8 +13,8 @@
             </row>
             <row>
                 <button icon="back" onTap="back" />
-                <button icon="up" onTap="up" />
-                <button text="Ambilight" onTap="light" />
+                <button icon="up" onTap="up" onhold="channel_up" />
+                <button text="Ambilight" onTap="light" onhold="channel_down" />
             </row>
             <row>
                 <button icon="left" onTap="left" />
