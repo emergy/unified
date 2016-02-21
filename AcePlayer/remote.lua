@@ -1,4 +1,5 @@
 local kb = require("keyboard");
+local dev = require("device");
 
 local host;
 local port;
@@ -28,6 +29,7 @@ end
 function test()
 	local resp = send();	
 	if (resp == nil or resp.status ~= 200) then
+        --[[
 		libs.server.update({
 			type = "dialog",
 			title = "VLC Connection",
@@ -40,6 +42,7 @@ function test()
 				"You may have to restart VLC after enabling the web interface for the changes to take effect.",
 			children = {{ type = "button", text = "OK" }}
 		});
+        --]]
 		return false;
 	else
 		return true;
@@ -352,6 +355,7 @@ end
 
 actions.quit = function ()
     kb.stroke("ctrl", "q");
+    dev.switch("alex.emergy.ChromeAdvanced");
 end
 
 actions.audio_delay_up = function ()
