@@ -1,3 +1,4 @@
 host: localhost
-port: 8080
 password: vlcremote
+port: 8080
+tv_playlist: c:\\Users\\Emergy\\Documents\\edem_pl.m3u8

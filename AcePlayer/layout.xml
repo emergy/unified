@@ -3,7 +3,7 @@
 	<tabs>
 		<tab text="PlayPad">
             <row weight="wrap">
-                <label id="title" text="Connecting..." ontap="show_position" />
+                <label id="title" text="Connecting..." ontap="show_position" onhold="tv" />
             </row>
             <row>
                 <button text="quit" ontap="quit" />

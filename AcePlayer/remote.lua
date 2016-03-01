@@ -1,5 +1,6 @@
 local kb = require("keyboard");
 local dev = require("device");
+local fs = require("fs");
 
 local host;
 local port;
@@ -369,12 +370,16 @@ end
 --@help Launch VLC application
 actions.launch = function()
 	if OS_WINDOWS then
+        local home = fs.homedir();
+        os.start(home .. "\\AppData\\Roaming\\ACEStream\\player\\ace_player.exe");
+        --[[
 		pcall(function ()
 			os.start("C:\\Program Files (x86)\\VideoLAN\\VLC\\vlc.exe");
 		end);
 		pcall(function ()
 			os.start("C:\\Program Files\\VideoLAN\\VLC\\vlc.exe");
 		end);
+        --]]
 	end
 end
 
@@ -476,10 +481,32 @@ actions.os_volume_up = function()
     kb.press("volumeup");
 end
 
+actions.tv = function()
+    local home = fs.homedir();
+    local url = settings["tv_playlist"];
+    os.start(home .. "\\AppData\\Roaming\\ACEStream\\player\\ace_player.exe", "--fullscreen", url);
+    for i = 1, 20 do
+        --local hwnd = win.window("ace_player.exe");
+        --if (hwnd ~= 0) then
+            --win.switchtowait("ace_player.exe");
+            update_status();
+            os.sleep(500);
+        --end
+    end
+    --[[
+    send("pl_empty");
+    local url = "http://" .. host .. ":" .. port .. "/requests/status.xml";
+    url = url .. "?input=" .. settings.tv_playlist;
+    --]]
+end
+
 actions.switch = function()
     if OS_WINDOWS then
         local hwnd = win.window("ace_player.exe");
-        if (hwnd ~= 0) then win.switchtowait("ace_player.exe"); end
+        if (hwnd ~= 0) then 
+            win.switchtowait("ace_player.exe"); 
+            update_status();
+        end
     end
 end
 
