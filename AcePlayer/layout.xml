@@ -17,7 +17,7 @@
             </row>
 			<row>
 				<button icon="rwd" ontap="jump_back" />
-				<button icon="stop" ontap="stop" />
+				<button id="play" icon="playpause" ontap="play_pause" />
 				<button icon="ff" ontap="jump_forward" />
 			</row>
 			<row weight="wrap">
@@ -28,7 +28,7 @@
 			</row>
 			<row weight="wrap">
 				<button icon="previous" ontap="previous" />
-				<button id="play" icon="playpause" ontap="play_pause" />
+				<button icon="stop" ontap="stop" />
 				<button icon="next" ontap="next" />
 			</row>
 		</tab>
