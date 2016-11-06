@@ -46,6 +46,7 @@ actions.green = function ()
     send_key("GreenColour");
 end
 
+--@help Screen Off
 actions.screenoff = function ()
     send_key("GreenColour");
     os.sleep(2500);
